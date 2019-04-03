@@ -1,0 +1,149 @@
+Como siempre, recuerden comentar las funciones correctamente:
+-En el ejercicio 2.1 no se utilizó una lista y sumar los elementos dentro de esta. -5, pudo haber hecho:
+                                  def suma(lista):
+                                      n = sum(lista)
+                                      return (n)
+
+                                  print(suma([10,20,30]))
+                                  print(suma([5,10,15]))
+                                  print(suma([30,19,8,7]))
+
+-El ejercicio 2.4 no cuenta todas las palabras, -3, pudo haber hecho: 
+                                  def contar_terminos_iguales(lista):
+                                      contador = 0
+                                      for cada_elemento in lista:
+                                          n = len(cada_elemento)
+                                          if n >= 2:
+                                              if cada_elemento[0] == cada_elemento[int(n)- 1]:
+
+                                                      contador += 1
+
+                                      return (contador)
+
+                                  print(contar_terminos_iguales(['abc', 'xyz', 'aba', '1221']))
+                                  print(contar_terminos_iguales(['rezar', 'recorrer', 'hola', 'alta']))
+                                  print(contar_terminos_iguales(['oro', 'test', 'ningun', 'dendidad']))
+                                  print(contar_terminos_iguales(['saludos', 'xyz']))
+
+-El ejercicio 2.5 falta, -11.11, pudo haber elegido cualquier ejercicio.
+-El ejercicio 2.6 no se respetó la nomeclatura, -5, y no se agregó el ejercicio del cúal se basó, -2:
+                                  count = 0
+                                  def contarLetras():
+                                     count = 0
+                                     for i in palabra:
+                                           count += 1
+                                     return count
+
+                                  palabra=(input("Introduce una palabras: "))
+                                  print(contarLetras())
+-Falta ejercicio 2.7, -11.11, pudo hoaber copiado el código del profesor.
+-Falta ejercicio 2.8, -11.11, no se cumple con el ejercicio ni se imprime el menú. Pudo haber hecho:
+                                codigo = None
+                                lista_estudiantes = []
+                                lista_materias = []
+                                dic_Est_In_Mat = {}
+                                dict_cali = {}
+
+                                def imprime_menu():
+                                    print("Menu:\n 1. Agregar estudiante\n 2. Agregar materia\n 3. Asignar materias\n 4. Asignar calificacion\n "
+                                          "5. Calcular indice\n 6. Ver calificacion\n 7. Calcular promedio\n 8. Salir ")
+
+                                def agregar_estudiante():
+                                    est = input("Digite su nombre: ")
+                                    lista_estudiantes.append(est)
+                                    print(lista_estudiantes)
+
+                                def agregar_materias():
+                                    mat = input("Digite la materia que quiere agregar: ")
+                                    lista_materias.append(mat)
+                                    print(lista_materias)
+
+                                def asignar_materia():
+                                    est = input("Digite su nombre: ")
+                                    mat = input("Digite la materia que quiere asignar: ")
+                                    key = est
+                                    dic_Est_In_Mat[key]= mat
+                                    print(dic_Est_In_Mat)
+
+                                def asignar_calificacion():
+                                    est = input("Digite su nombre: " )
+                                    mat = input("Digite la materia: ")
+                                    cali = int(input("Digite su calificacion: "))
+                                    key = est + mat
+                                    dict_cali[key] = cali
+                                    print(dict_cali)
+
+                                def calcular_indice():
+                                     mat = input("Digite la materia: ")
+                                     cali = int(input("Digite su calificacion: "))
+                                     cre = int(input("Diguite la cantidad de creditos de la materia: "))
+
+                                def ver_calificacion ():
+                                    est = input("Digite su nombre: " )
+                                    mat = input("Digite la materia: ")
+                                    key = est + mat
+                                    print('Su calificacion es: ' + str (dict_cali[key]))
+
+                                def calcular_promedio ():
+                                    cali= 0
+                                    mat = input("Digite la materia de la que quiere ver el promedio: ")
+                                    key = mat
+                                    dict_cali[key] = cali
+                                    calis = []
+                                    i = 0
+                                    for key,cali in  dict_cali :
+                                        calis += cali
+                                    for e in calis:
+                                        m = sum(e)
+                                        i += 1
+                                        print(m/i)
+
+                                while codigo != "exit":
+                                    imprime_menu()
+                                    codigo = input("Opcion: ")
+
+                                    if int(codigo) == 1:
+                                        agregar_estudiante()
+
+                                    elif int(codigo) == 2:
+                                        agregar_materias()
+
+                                    elif int(codigo) == 3:
+                                        asignar_materia()
+
+                                    elif int(codigo) == 4:
+                                        asignar_calificacion()
+
+                                    elif int(codigo) == 5:
+                                        calcular_indice()
+
+                                    elif int(codigo) == 6:
+                                        ver_calificacion()
+
+                                    elif int(codigo) == 7:
+                                        calcular_promedio()
+
+                                    elif int(codigo) == 8:
+                                        break
+-Falta el ejercicio 2.9 -11.11, pudo haber hecho:
+                                    import pyautogui
+
+                                    def llenar_formulario(nombre_del_repositorio):
+                                        pyautogui.moveTo(285, 179,duration= 2 ) #Crear un nuevo repositorio
+                                        pyautogui.click()
+                                        pyautogui.moveTo(545, 348, duration= 2) #ponerle el nombre
+                                        pyautogui.click()
+                                        pyautogui.typewrite(nombre_del_repositorio)
+                                        pyautogui.moveTo(295, 587, duration=2)   #ponerlo privado
+                                        pyautogui.click()
+                                        pyautogui.moveTo(296, 662, duration= 2)   #iniciarlo con un "read me"
+                                        pyautogui.click()
+                                        pyautogui.moveTo(86, 48, duration=2)      #recargar la pagina
+                                        pyautogui.click()
+
+                                    with open ('C:\\Users\\Rafael Medina\\Documents\\NotePad_del_portafolio.txt','r') as archivo:
+                                        nombre_repositorio = archivo.read()
+                                        lineas = contenido.split("\n")
+                                        for linea in lineas:
+                                            nombre_repositorio = linea[0]
+                                            llenar_formulario(nombre_del_repositorio=nombre_repositorio)
